@@ -1,21 +1,21 @@
 // 1-vazifa
 
 function Count(str){
-  let upper = 0;
-  let lower = 0;
-  let number = 0;
-  let symbol = 0;
+  let upper = [];
+  let lower = [];
+  let number = [];
+  let symbol = [];
   for (let i = 0; i < str.length; i++){
     // if (!isNaN(str[i])) number++;
-    if (str[i].match(/\d/)) number++;
-    else if(str[i].match(/[a-z]/)) lower++;
-    else if (str[i].match(/[A-Z]/)) upper++;
-    else symbol++;
+    if (str[i].match(/\d/)) number.push(str[i]);
+    else if(str[i].match(/[a-z]/)) lower.push(str[i]);
+    else if (str[i].match(/[A-Z]/)) upper.push(str[i]);
+    else symbol.push(str[i]);
   }
-  console.log("Upper case letters: " + upper);
-  console.log("Lower case letters : " + lower);
-  console.log("Number : " + number);
-  console.log("Special characters : " + symbol);
+  console.log("Upper case letters: " + upper.join(""));
+  console.log("Lower case letters : " + lower.join(""));
+  console.log("Number : " + number.join(""));
+  console.log("Special characters : " + symbol.join(""));
 }
 
 const input = document.querySelector("#input");
